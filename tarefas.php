@@ -1,6 +1,9 @@
 <?php
   session_start();
 
+  include 'helpers.php';
+  include 'banco.php';
+
   if(isset($_GET['nome']) && $_GET['nome'] != ''){
     $tarefa = array();
 
@@ -20,22 +23,18 @@
 
     $tarefa['prioridade'] = $_GET['prioridade'];
 
+    // QUANDO UM CHECKBOX NAO É MARCADO, ELE NÃO É ENVIADO PELO NAVEGADOR
+    
     if(isset($_GET['concluida'])){
-      $tarefa['concluida'] = $_GET['concluida'];
+      $tarefa['concluida'] = 1;
     } else {
-      $tarefa['concluida'] = '';
+      $tarefa['concluida'] = 0;
     }
 
-    $_SESSION['lista_tarefas'][] = $tarefa;
+    gravar_tarefa($conexao,$tarefa);
   }
 
-  if (isset($_SESSION['lista_tarefas'])) {
-    $lista_tarefas = $_SESSION['lista_tarefas'];
-  }
-
-  else{
-    $lista_tarefas = array();
-  }
+    $lista_tarefas = buscar_tarefas($conexao);
 
   include "template.php";
  ?>
