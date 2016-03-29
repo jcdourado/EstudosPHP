@@ -11,7 +11,6 @@
     die(); // mata o programa
   }
 
-
   function buscar_tarefas($conexao){
     $sqlBusca = 'SELECT * FROM tarefas';
     $result = mysqli_query($conexao,$sqlBusca); //busca
@@ -36,4 +35,31 @@
 
     mysqli_query($conexao,$sqlInsert);
    }
+
+   function buscar_tarefa($conexao,$id){
+     $sql = "SELECT * FROM tarefas WHERE id = " . $id;
+     $result = mysqli_query($conexao,$sql);
+     return mysqli_fetch_assoc($result);
+   }
+
+   function editar_tarefa($conexao,$tarefa){
+     $sql = "
+        UPDATE tarefas SET
+        nome = '{$tarefa['nome']}',
+        descricao = '{$tarefa['descricao']}',
+        prioridade = {$tarefa['prioridade']},
+        prazo = '{$tarefa['prazo']}',
+        concluida = {$tarefa['concluida']}
+        WHERE id = {$tarefa['id']}
+      ";
+
+      mysqli_query($conexao,$sql);
+   }
+
+   function remover_tarefa($conexao,$id){
+     $sql = "DELETE FROM tarefas WHERE id = {$id}";
+     mysqli_query($conexao,$sql);
+   }
+
+
  ?>

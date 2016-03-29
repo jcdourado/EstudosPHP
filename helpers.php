@@ -24,6 +24,16 @@
     return $exibe;
   }
 
+  function traduz_banco($data){
+    if($data == "" || $data == "00/00/0000"){
+      return '';
+    }
+    $dados = explode("/",$data);
+    $exibe = "{$dados[2]}-{$dados[1]}-{$dados[0]}";
+
+    return $exibe;
+  }
+
   function traduz_concluida($concluida){
     if($concluida == 1){
       return 'Sim';

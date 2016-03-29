@@ -1,21 +1,50 @@
 <?php
-session_start();
+include 'banco.php';
+include 'helper.php';
+
 if(isset($_GET['nome']) && $_GET['nome'] != ''){
       $contato = array();
       $contato['nome'] = $_GET['nome'];
-      $contato['telefone'] = $_GET['telefone'];
-      $contato['email'] = $_GET['email'];
-      $contato['descricao'] = $_GET['descricao'];
-      $contato['nascimento'] = $_GET['nascimento'];
-      $contato['favorito'] = $_GET['favorito'];
-      $_SESSION['lista_contatos'][] = $contato;
+
+      if(isset($_GET['telefone'])){
+        $contato['telefone'] = $_GET['telefone'];
+      } else{
+        $contato['telefone'] = '';
+      }
+
+      if(isset($_GET['email'])){
+        $contato['email'] = $_GET['email'];
+      } else{
+        $contato['email'] = '';
+      }
+
+      if(isset($_GET['descricao'])){
+        $contato['descricao'] = $_GET['descricao'];
+      } else{
+        $contato['descricao'] = '';
+      }
+
+      if(isset($_GET['nascimento'])){
+        $contato['nascimento'] = valida_data($_GET['nascimento']);
+      } else{
+        $contato['nascimento'] = '0000-00-00';
+      }
+
+      if(isset($_GET['favorito'])){
+        $contato['favorito'] = $_GET['favorito'];
+      }else{
+        $contato['favorito'] = 0;
+      }
+
+      gravar_contato($conexao,$contato);
+      header('Location: contatos.php');
+      die();
 }
 
 $lista_contatos = array();
 
-if(isset($_SESSION['lista_contatos'])){
-  $lista_contatos = $_SESSION['lista_contatos'];
-}
+$lista_contatos = buscar_todos_contatos($conexao);
+$exibe_tabela = true;
 
-include "ListaContatosCap4.php"
+include "template.php";
 ?>
