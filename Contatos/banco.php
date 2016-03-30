@@ -20,7 +20,6 @@ function gravar_contato($conexao,$contato){
    {$contato['favorito']},
    '{$contato['telefone']}'
    )";
-   echo print_r($contato);
 
   mysqli_query($conexao,$sql);
 }

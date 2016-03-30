@@ -18,7 +18,8 @@
       <td><?php echo $contato['descricao']; ?></td>
       <td><?php echo data_exibir($contato['nascimento']); ?></td>
       <td><?php echo trata_favorito($contato['favorito']); ?></td>
-      <td><a href="excluir.php?id=<?php echo $contato['id']; ?>">Excluir</a></td>
+      <td><a href="alterar.php?id=<?php echo $contato['id']; ?>">Alterar</a>
+        <a href="excluir.php?id=<?php echo $contato['id']; ?>">Excluir</a></td>
     </tr>
   <?php endforeach;?>
 
