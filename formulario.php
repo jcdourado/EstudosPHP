@@ -34,5 +34,8 @@
     </label>
 
     <input type="submit" value='<?php echo ($tarefa['id'] > 0) ? "Atualizar" : "Cadastrar"; ?>'>
+    <?php if ($tarefa['id'] > 0) : ?>
+      <a href="tarefas.php">Cancelar</a>
+    <?php  endif; ?>
   </fieldset>
 </form>

@@ -1,7 +1,7 @@
 <?php
   include 'banco.php';
 
-  remover_tarefa($conexao, $_GET['id']);
+  remover_todas_tarefas($conexao);
 
   header('Location: tarefas.php');
   die();

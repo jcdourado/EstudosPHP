@@ -61,5 +61,10 @@
      mysqli_query($conexao,$sql);
    }
 
+   function remover_todas_tarefas($conexao){
+     $sql = "DELETE FROM tarefas";
+     mysqli_query($conexao,$sql);
+   }
+
 
  ?>
