@@ -44,4 +44,27 @@ function apagar_contato($conexao,$id){
   mysqli_query($conexao,$sql);
 }
 
+function editar_tarefa($conexao,$contato){
+  $sql = "
+     UPDATE contatos SET
+     nome,email,descricao,nascimento,favorito,telefone
+     nome = '{$contato['nome']}',
+     email = '{$contato['email']}',
+     descricao = '{$contato['descricao']}',
+     nascimento = '{$contato['nascimento']}',
+     favorito = '{$contato['favorito']}',
+     telefone = '{$contato['telefone']}'
+     WHERE id = {$contato['id']}
+   ";
+
+   mysqli_query($conexao,$sql);
+}
+
+function buscar_contato($conexao,$id){
+  $sql= "SELECT * FROM contatos WHERE id = {$id}";
+  $result = mysqli_query($conexao,$sql);
+
+  return mysqli_fetch_assoc($result);
+}
+
  ?>

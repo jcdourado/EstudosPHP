@@ -41,6 +41,15 @@ if(isset($_GET['nome']) && $_GET['nome'] != ''){
       die();
 }
 
+$contato = array(
+  'nome' => '',
+  'telefone' => '',
+  'email' => '',
+  'descricao' => '',
+  'nascimento' => '',
+  'favorito' => false
+);
+
 $lista_contatos = array();
 
 $lista_contatos = buscar_todos_contatos($conexao);
