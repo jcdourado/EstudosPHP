@@ -6,28 +6,28 @@
 
   $exibir_tarefa = true;
 
-  if(isset($_GET['nome']) && $_GET['nome'] != ''){
+  if(isset($_POST['nome']) && $_POST['nome'] != ''){
     $tarefa = array();
 
-    $tarefa['nome'] = $_GET['nome'];
+    $tarefa['nome'] = $_POST['nome'];
 
-    if(isset($_GET['descricao'])){
-      $tarefa['descricao'] = $_GET['descricao'];
+    if(isset($_POST['descricao'])){
+      $tarefa['descricao'] = $_POST['descricao'];
     } else {
       $tarefa['descricao'] = '';
     }
 
-    if(isset($_GET['prazo'])){
-      $tarefa['prazo'] = $_GET['prazo'];
+    if(isset($_POST['prazo'])){
+      $tarefa['prazo'] = $_POST['prazo'];
     } else {
       $tarefa['prazo'] = '';
     }
 
-    $tarefa['prioridade'] = $_GET['prioridade'];
+    $tarefa['prioridade'] = $_POST['prioridade'];
 
     // QUANDO UM CHECKBOX NAO É MARCADO, ELE NÃO É ENVIADO PELO NAVEGADOR
 
-    if(isset($_GET['concluida'])){
+    if(isset($_POST['concluida'])){
       $tarefa['concluida'] = 1;
     } else {
       $tarefa['concluida'] = 0;

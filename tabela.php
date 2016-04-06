@@ -1,5 +1,5 @@
 <a href="dml.php?op=2">Apagar todas as tarefas</a>
-<table>
+<table border="1">
   <tr>
     <th>Tarefa</th>
     <th>Descricao</th>
