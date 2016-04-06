@@ -35,9 +35,14 @@ if(isset($_GET['placa']) && $_GET['placa'] != ''){
       die();
 }
 
+
 $lista_veiculos = array();
 
-$lista_veiculos = buscar_todos_veiculos($conexao);
+if(@$_GET['exi'] == 0){
+    $lista_veiculos = buscar_todos_veiculos($conexao);
+} else if(isset($_POST['horaProcurada'])){
+  $lista_veiculos = buscar_por_hora($conexao,$_POST['horaProcurada']);
+}
 $exibe_tabela = true;
 
 include "template.php";

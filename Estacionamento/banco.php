@@ -44,7 +44,20 @@ function apagar_veiculo($conexao,$id){
 }
 
 
+function buscar_por_hora($conexao,$hora){
+  $sql = "SELECT * FROM veiculos WHERE hora_entrada = '{$hora}'";
 
+  $result = mysqli_query($conexao,$sql);
+
+  $veiculos = array();
+
+  while($veiculo = mysqli_fetch_assoc($result)){
+    $veiculos[] = $veiculo;
+  }
+
+  return $veiculos;
+
+}
 
 
 
