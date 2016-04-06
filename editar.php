@@ -4,6 +4,9 @@
   include 'banco.php';
   include 'helpers.php';
 
+  // mysqli_real_escape_string -> proteger de SQL Injections
+
+
   $exibir_tarefa = false;
 
   $tem_erros = false;
