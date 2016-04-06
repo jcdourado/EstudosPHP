@@ -1,5 +1,7 @@
 <form>
   <fieldset>
+    <input type='hidden' name ='id' value="<?php echo $contato['id']; ?>"></input>
+
     <label>Nome:</label>
     <input type="text" name="nome" placeholder="Insira seu nome" value="<?php echo $contato['nome']; ?>">
 
@@ -18,6 +20,6 @@
     <label>Favorito</label>
     <input type="checkbox" name="favorito" value="1" <?php echo ($contato['favorito']) ? 'checked' : ''; ?>>
 
-    <input type="submit" value="Enviar">
+    <input type="submit" value="<?php if(isset($_GET['id']) && $_GET['id'] > 0) { ?> Alterar <?php }else { ?> Enviar <?php } ?>">
   </fieldset>
 </form>

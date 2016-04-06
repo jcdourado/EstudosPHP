@@ -44,10 +44,9 @@ function apagar_contato($conexao,$id){
   mysqli_query($conexao,$sql);
 }
 
-function editar_tarefa($conexao,$contato){
+function editar_contato($conexao,$contato){
   $sql = "
      UPDATE contatos SET
-     nome,email,descricao,nascimento,favorito,telefone
      nome = '{$contato['nome']}',
      email = '{$contato['email']}',
      descricao = '{$contato['descricao']}',

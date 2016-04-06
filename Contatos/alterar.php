@@ -4,6 +4,8 @@ include 'helper.php';
 
 if(isset($_GET['nome']) && $_GET['nome'] != ''){
       $contato = array();
+
+      $contato['id'] = $_GET['id'];
       $contato['nome'] = $_GET['nome'];
 
       if(isset($_GET['telefone'])){

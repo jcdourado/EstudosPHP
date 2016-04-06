@@ -42,6 +42,7 @@ if(isset($_GET['nome']) && $_GET['nome'] != ''){
 }
 
 $contato = array(
+  'id' => 0,
   'nome' => '',
   'telefone' => '',
   'email' => '',
