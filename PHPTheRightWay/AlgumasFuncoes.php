@@ -10,5 +10,7 @@
   // Interfaces podem ter constates
 
   // Traits sao como interfaces, só que implementam métodos:
-    // Trait "t" {function "..."} -> na classe que usa coloca: use "t"
+    // Trait "t" {function "..."} -> na classe que usa coloca: use "t" '{visibilidade "metodo"}'
+    // Podem ter variaveis, statics, abstracts
+                // sao usadas sem $
  ?>
