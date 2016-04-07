@@ -5,4 +5,8 @@
     // variaveis: $argv (array com os valores) e $argc (quantos), exit(1) -> exit
     // php "arquivos" -> executa ele na linha de comandos
 
+  // XDebuger -> debugador para diversas IDE's
+
+  
+
  ?>
