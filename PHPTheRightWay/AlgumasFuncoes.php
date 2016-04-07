@@ -6,4 +6,9 @@
   // parse_ini_file -> pegar um ini e transformar em array
   // move_uploaded_file -> mover arquivos
   // __clone,__call, __destruct, __autoload == spl_autoload_register
+
+  // Interfaces podem ter constates
+
+  // Traits sao como interfaces, só que implementam métodos:
+    // Trait "t" {function "..."} -> na classe que usa coloca: use "t"
  ?>
