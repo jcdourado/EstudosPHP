@@ -19,4 +19,15 @@
     // se tiver sobrescrito o static:: chama o debaixo
 
   // serialize e unserialize
+
+  // -------------------------------------------
+
+  // High order functions: funcoes passadas à outras funcoes
+  // Suporte à programação funcional
+  // Variaveis podem ser funcoes
+
+  // ------------------------------------------
+
+  // Namespaces: modo de encapsular items
+    // Namespaces PHP ou php gerarao conflitos
  ?>
