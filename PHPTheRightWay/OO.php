@@ -2,10 +2,12 @@
   class A{
     public $var = "Valor padrão teste";
 
-    public function displayVar(){
-      echo $var;
+    function __get($prop){
+      return $this->$prop;
     }
   }
 
+  $a = new A;
+  echo $a->var;
 
  ?>

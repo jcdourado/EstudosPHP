@@ -5,7 +5,8 @@
   // stdClass -> classe para colocar atributos
   // parse_ini_file -> pegar um ini e transformar em array
   // move_uploaded_file -> mover arquivos
-  // __clone,__call, __destruct, __autoload == spl_autoload_register
+  // __clone,__call, __destruct, __autoload == spl_autoload_register -> funcoes mágicas!
+  
 
   // Interfaces podem ter constates
 
@@ -13,4 +14,5 @@
     // Trait "t" {function "..."} -> na classe que usa coloca: use "t" '{visibilidade "metodo"}'
     // Podem ter variaveis, statics, abstracts
                 // sao usadas sem $
+
  ?>
