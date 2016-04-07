@@ -30,4 +30,6 @@
 
   // Namespaces: modo de encapsular items
     // Namespaces PHP ou php gerarao conflitos
+    // Precisam ser a primeira linha do script
+    // Igual o import do JAVA, mas sempre que utilizar usa ""/"Namespace"
  ?>
