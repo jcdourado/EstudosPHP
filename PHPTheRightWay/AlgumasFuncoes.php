@@ -6,7 +6,6 @@
   // parse_ini_file -> pegar um ini e transformar em array
   // move_uploaded_file -> mover arquivos
   // __clone,__call, __destruct, __autoload == spl_autoload_register -> funcoes mágicas!
-  
 
   // Interfaces podem ter constates
 
@@ -15,4 +14,9 @@
     // Podem ter variaveis, statics, abstracts
                 // sao usadas sem $
 
+  // Recurso: Late Static Bindings:
+    // chama static::var ou metodo -> o self é limitado à propria classe
+    // se tiver sobrescrito o static:: chama o debaixo
+
+  // serialize e unserialize
  ?>
